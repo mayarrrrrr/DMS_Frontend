@@ -9,17 +9,21 @@ import AdminNavbar from './AdminNavbar';
 const App = () => {
   return (
     <Router>
-      <div className="md:flex h-screen overflow-hidden">
-        <div className="hidden md:flex lg:flex">
+      <div className="flex h-screen w-full items-center  overflow-hidden">
+        
+        <div className="w-1/4 bg-gray-800 text-white hidden md:block">
           <AdminNavbar />
         </div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/reports" element={<Reports />} />
-          <Route path="/map" element={<Map />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/tasks" element={<Tasks />} />
-        </Routes>
+
+        <div className="w-3/4 flex-1 p-6 overflow-auto">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/reports" element={<Reports />} />
+            <Route path="/map" element={<Map />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/tasks" element={<Tasks />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );
